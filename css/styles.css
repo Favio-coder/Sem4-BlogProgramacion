@@ -574,6 +574,10 @@ body {
   .playground-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .playground-box.counter-box {
+    grid-column: 1 / -1;
+  }
 }
 
 .playground-box {
@@ -733,6 +737,129 @@ body {
   font-size: 0.75rem;
   color: #6b7280;
   font-family: "JetBrains Mono", monospace;
+}
+
+/* =====================================================
+   CONTADOR MANUAL (start / pause / reset)
+   ===================================================== */
+
+.counter-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 2rem 1.5rem;
+}
+
+.counter-display {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 30px rgba(34, 197, 94, 0.25);
+  transition: text-shadow 0.3s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-display.running {
+  text-shadow: 0 0 45px rgba(34, 197, 94, 0.5);
+}
+
+.counter-status {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.counter-status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #4b5563;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-status-dot.on {
+  background: #4ade80;
+  animation: live-pulse 1.5s ease-out infinite;
+}
+
+.counter-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.counter-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.65rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.counter-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.counter-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.counter-btn.start {
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+.counter-btn.start:hover:not(:disabled) {
+  background: rgba(34, 197, 94, 0.12);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.2);
+}
+
+.counter-btn.pause {
+  border-color: rgba(251, 191, 36, 0.4);
+  color: #fbbf24;
+}
+.counter-btn.pause:hover:not(:disabled) {
+  background: rgba(251, 191, 36, 0.1);
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.15);
+}
+
+.counter-btn.reset {
+  border-color: rgba(248, 113, 113, 0.35);
+  color: #f87171;
+}
+.counter-btn.reset:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.1);
+  box-shadow: 0 10px 25px rgba(248, 113, 113, 0.15);
+}
+
+.counter-laps {
+  width: 100%;
+  max-height: 5.5rem;
+  overflow-y: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: #6b7280;
+  text-align: left;
+  padding: 0 0.5rem;
+}
+
+.counter-laps span {
+  display: block;
+  padding: 0.15rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
 }
 
 /* Respect reduced motion */

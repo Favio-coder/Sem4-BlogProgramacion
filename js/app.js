@@ -754,6 +754,102 @@ function initLiveStats() {
     if (section)
         observer.observe(section);
 }
+// =====================================================
+// 8f. CONTADOR MANUAL (start / pause / reset / vuelta)
+// =====================================================
+function formatElapsed(ms) {
+    const totalCentis = Math.floor(ms / 10);
+    const minutes = Math.floor(totalCentis / 6000);
+    const seconds = Math.floor((totalCentis % 6000) / 100);
+    const centis = totalCentis % 100;
+    const mm = minutes.toString().padStart(2, "0");
+    const ss = seconds.toString().padStart(2, "0");
+    const cc = centis.toString().padStart(2, "0");
+    return `${mm}:${ss}.${cc}`;
+}
+function initManualCounter() {
+    const display = qs("#counterDisplay");
+    const startBtn = qs("#counterStart");
+    const pauseBtn = qs("#counterPause");
+    const resetBtn = qs("#counterReset");
+    const lapBtn = qs("#counterLap");
+    const lapsEl = qs("#counterLaps");
+    const statusDot = qs("#counterStatusDot");
+    const statusText = qs("#counterStatusText");
+    if (!display || !startBtn || !pauseBtn || !resetBtn || !lapBtn || !lapsEl || !statusDot || !statusText) {
+        return;
+    }
+    let elapsed = 0;
+    let startedAt = 0;
+    let rafId = null;
+    let running = false;
+    let lapCount = 0;
+    function render() {
+        display.textContent = formatElapsed(elapsed);
+        if (running) {
+            rafId = requestAnimationFrame(tick);
+        }
+    }
+    function tick() {
+        elapsed = performance.now() - startedAt;
+        render();
+    }
+    function setStatus(label, on) {
+        statusText.textContent = label;
+        statusDot.classList.toggle("on", on);
+        display.classList.toggle("running", on);
+    }
+    function start() {
+        if (running)
+            return;
+        running = true;
+        startedAt = performance.now() - elapsed;
+        setStatus("CONTANDO", true);
+        startBtn.disabled = true;
+        pauseBtn.disabled = false;
+        lapBtn.disabled = false;
+        tick();
+    }
+    function pause() {
+        if (!running)
+            return;
+        running = false;
+        if (rafId !== null)
+            cancelAnimationFrame(rafId);
+        setStatus("PAUSADO", false);
+        startBtn.disabled = false;
+        startBtn.textContent = "▶ Reanudar";
+        pauseBtn.disabled = true;
+        lapBtn.disabled = true;
+    }
+    function reset() {
+        running = false;
+        if (rafId !== null)
+            cancelAnimationFrame(rafId);
+        elapsed = 0;
+        lapCount = 0;
+        lapsEl.innerHTML = "";
+        setStatus("DETENIDO", false);
+        startBtn.disabled = false;
+        startBtn.textContent = "▶ Iniciar";
+        pauseBtn.disabled = true;
+        lapBtn.disabled = true;
+        render();
+    }
+    function addLap() {
+        if (!running)
+            return;
+        lapCount++;
+        const entry = document.createElement("span");
+        entry.textContent = `Vuelta ${lapCount.toString().padStart(2, "0")} — ${formatElapsed(elapsed)}`;
+        lapsEl.prepend(entry);
+    }
+    startBtn.addEventListener("click", start);
+    pauseBtn.addEventListener("click", pause);
+    resetBtn.addEventListener("click", reset);
+    lapBtn.addEventListener("click", addLap);
+    render();
+}
 function initRuntimeMonitor() {
     const fpsEl = qs("#fpsValue");
     const frameEl = qs("#frameValue");
@@ -862,6 +958,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initParticleCanvas();
     initTrailCanvas();
     initTerminal();
+    initManualCounter();
     initLiveStats();
     initRuntimeMonitor();
     initNewsletterForm();

@@ -963,6 +963,111 @@ function initLiveStats(): void {
 }
 
 // =====================================================
+// 8f. CONTADOR MANUAL (start / pause / reset / vuelta)
+// =====================================================
+
+function formatElapsed(ms: number): string {
+  const totalCentis = Math.floor(ms / 10);
+  const minutes = Math.floor(totalCentis / 6000);
+  const seconds = Math.floor((totalCentis % 6000) / 100);
+  const centis = totalCentis % 100;
+  const mm = minutes.toString().padStart(2, "0");
+  const ss = seconds.toString().padStart(2, "0");
+  const cc = centis.toString().padStart(2, "0");
+  return `${mm}:${ss}.${cc}`;
+}
+
+function initManualCounter(): void {
+  const display = qs<HTMLElement>("#counterDisplay");
+  const startBtn = qs<HTMLButtonElement>("#counterStart");
+  const pauseBtn = qs<HTMLButtonElement>("#counterPause");
+  const resetBtn = qs<HTMLButtonElement>("#counterReset");
+  const lapBtn = qs<HTMLButtonElement>("#counterLap");
+  const lapsEl = qs<HTMLElement>("#counterLaps");
+  const statusDot = qs<HTMLElement>("#counterStatusDot");
+  const statusText = qs<HTMLElement>("#counterStatusText");
+
+  if (!display || !startBtn || !pauseBtn || !resetBtn || !lapBtn || !lapsEl || !statusDot || !statusText) {
+    return;
+  }
+
+  let elapsed = 0;
+  let startedAt = 0;
+  let rafId: number | null = null;
+  let running = false;
+  let lapCount = 0;
+
+  function render(): void {
+    display!.textContent = formatElapsed(elapsed);
+    if (running) {
+      rafId = requestAnimationFrame(tick);
+    }
+  }
+
+  function tick(): void {
+    elapsed = performance.now() - startedAt;
+    render();
+  }
+
+  function setStatus(label: string, on: boolean): void {
+    statusText!.textContent = label;
+    statusDot!.classList.toggle("on", on);
+    display!.classList.toggle("running", on);
+  }
+
+  function start(): void {
+    if (running) return;
+    running = true;
+    startedAt = performance.now() - elapsed;
+    setStatus("CONTANDO", true);
+    startBtn!.disabled = true;
+    pauseBtn!.disabled = false;
+    lapBtn!.disabled = false;
+    tick();
+  }
+
+  function pause(): void {
+    if (!running) return;
+    running = false;
+    if (rafId !== null) cancelAnimationFrame(rafId);
+    setStatus("PAUSADO", false);
+    startBtn!.disabled = false;
+    startBtn!.textContent = "▶ Reanudar";
+    pauseBtn!.disabled = true;
+    lapBtn!.disabled = true;
+  }
+
+  function reset(): void {
+    running = false;
+    if (rafId !== null) cancelAnimationFrame(rafId);
+    elapsed = 0;
+    lapCount = 0;
+    lapsEl!.innerHTML = "";
+    setStatus("DETENIDO", false);
+    startBtn!.disabled = false;
+    startBtn!.textContent = "▶ Iniciar";
+    pauseBtn!.disabled = true;
+    lapBtn!.disabled = true;
+    render();
+  }
+
+  function addLap(): void {
+    if (!running) return;
+    lapCount++;
+    const entry = document.createElement("span");
+    entry.textContent = `Vuelta ${lapCount.toString().padStart(2, "0")} — ${formatElapsed(elapsed)}`;
+    lapsEl!.prepend(entry);
+  }
+
+  startBtn.addEventListener("click", start);
+  pauseBtn.addEventListener("click", pause);
+  resetBtn.addEventListener("click", reset);
+  lapBtn.addEventListener("click", addLap);
+
+  render();
+}
+
+// =====================================================
 // 9. MONITOR DE RENDIMIENTO (FPS, frame time, long tasks, heap)
 // =====================================================
 
@@ -1095,6 +1200,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initParticleCanvas();
   initTrailCanvas();
   initTerminal();
+  initManualCounter();
   initLiveStats();
   initRuntimeMonitor();
   initNewsletterForm();

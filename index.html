@@ -422,6 +422,28 @@
               <canvas id="trailCanvas" class="absolute inset-0 w-full h-full"></canvas>
               <span class="playground-hint">mueve y haz clic →</span>
             </div>
+
+            <!-- Playground 3: contador manual (start / pause / reset) -->
+            <div class="playground-box counter-box">
+              <span class="playground-label">// MANUAL_COUNTER</span>
+              <div class="counter-widget">
+                <div class="counter-status">
+                  <span id="counterStatusDot" class="counter-status-dot"></span>
+                  <span id="counterStatusText">DETENIDO</span>
+                </div>
+
+                <div id="counterDisplay" class="counter-display">00:00.0</div>
+
+                <div class="counter-controls">
+                  <button id="counterStart" type="button" class="counter-btn start">▶ Iniciar</button>
+                  <button id="counterPause" type="button" class="counter-btn pause" disabled>⏸ Pausar</button>
+                  <button id="counterLap" type="button" class="counter-btn" disabled>⏱ Vuelta</button>
+                  <button id="counterReset" type="button" class="counter-btn reset">↺ Reiniciar</button>
+                </div>
+
+                <div id="counterLaps" class="counter-laps"></div>
+              </div>
+            </div>
           </div>
 
           <!-- Playground 3: terminal animada -->
