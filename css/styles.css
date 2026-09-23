@@ -1,0 +1,671 @@
+/* ========================================
+   BASE
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    padding: 1.5rem;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 0.75rem;
+
+    color: #9ca3af;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    transition:
+        border-color 200ms ease,
+        background-color 200ms ease,
+        transform 200ms ease;
+}
+
+.category-card:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+
+    background: rgba(34, 197, 94, 0.04);
+
+    transform: translateY(-2px);
+
+    color: white;
+}
+
+.category-card.active {
+    border-color: rgba(34, 197, 94, 0.6);
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #4ade80;
+}
+
+
+/* ========================================
+   ARTICLE CARDS
+======================================== */
+
+.article-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 0.75rem;
+
+    transition:
+        transform 200ms ease,
+        border-color 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(34, 197, 94, 0.3);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   ARTICLE IMAGE
+======================================== */
+
+.article-image {
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========================================
+   ARTICLE CONTENT
+======================================== */
+
+.article-tag {
+    display: inline-block;
+
+    padding: 0.25rem 0.6rem;
+
+    border-radius: 999px;
+
+    background: rgba(34, 197, 94, 0.08);
+
+    color: #4ade80;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+}
+
+.article-title {
+    margin-top: 1rem;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    transition: color 200ms ease;
+}
+
+.article-card:hover .article-title {
+    color: #4ade80;
+}
+
+.article-description {
+    margin-top: 0.75rem;
+
+    color: #6b7280;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   ARTICLE FOOTER
+======================================== */
+
+.article-footer {
+    margin-top: 1.5rem;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #4b5563;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 0.7rem;
+}
+
+.read-more {
+    color: #4ade80;
+
+    transition: transform 200ms ease;
+}
+
+.read-more:hover {
+    transform: translateX(4px);
+}
+
+
+/* ========================================
+   CANVAS
+======================================== */
+
+#codeCanvas {
+    display: block;
+}
+
+
+/* ========================================
+   SELECTION
+======================================== */
+
+::selection {
+    background: rgba(34, 197, 94, 0.3);
+
+    color: white;
+}
+
+/* ========================================
+   LEARNING CAROUSEL
+======================================== */
+
+.learning-track {
+    display: flex;
+    width: 100%;
+
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform;
+}
+
+.learning-slide {
+    min-width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    padding: 3rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.08),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 1rem;
+}
+
+
+/* ========================================
+   ICON
+======================================== */
+
+.learning-icon {
+    flex-shrink: 0;
+
+    width: 140px;
+    height: 140px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(34, 197, 94, 0.35);
+
+    border-radius: 1rem;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 197, 94, 0.12),
+            transparent 70%
+        );
+
+    color: #4ade80;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 40px rgba(34, 197, 94, 0.08);
+
+    animation: learningFloat 3s ease-in-out infinite;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+.learning-number {
+    color: #4ade80;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.1em;
+}
+
+.learning-title {
+    margin-top: 0.5rem;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+}
+
+.learning-description {
+    margin-top: 1rem;
+
+    max-width: 650px;
+
+    color: #6b7280;
+
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   TAGS
+======================================== */
+
+.learning-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    margin-top: 1.5rem;
+}
+
+.learning-tags span {
+    padding: 0.35rem 0.7rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #9ca3af;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 0.7rem;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.carousel-button {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 0.5rem;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    color: #9ca3af;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 1.1rem;
+
+    transition:
+        background-color 200ms ease,
+        border-color 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.carousel-button:hover {
+    background: rgba(34, 197, 94, 0.08);
+
+    border-color: rgba(34, 197, 94, 0.4);
+
+    color: #4ade80;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   INDICATORS
+======================================== */
+
+.carousel-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 999px;
+
+    background: #374151;
+
+    transition:
+        width 250ms ease,
+        background-color 250ms ease;
+}
+
+.carousel-dot.active {
+    width: 28px;
+
+    background: #22c55e;
+}
+
+
+/* ========================================
+   FLOATING ANIMATION
+======================================== */
+
+@keyframes learningFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .learning-slide {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 1.5rem;
+
+        padding: 2rem;
+    }
+
+    .learning-icon {
+        width: 80px;
+        height: 80px;
+
+        font-size: 1rem;
+    }
+
+    .learning-title {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* =========================================================
+   COUNTERS
+========================================================= */
+
+.counter-card {
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.04);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.08);
+}
+
+
+/* =========================================================
+   CATEGORY HOVER
+========================================================= */
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  min-height: 130px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  color: #9ca3af;
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.category-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 999px;
+
+  background: rgba(34, 197, 94, 0.08);
+
+  filter: blur(30px);
+
+  opacity: 0;
+
+  transition: opacity 300ms ease;
+}
+
+.category-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.08);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card.active {
+  border-color: rgba(34, 197, 94, 0.5);
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.05);
+}
+
+
+/* =========================================================
+   ARTICLE HOVER
+========================================================= */
+
+.article-card {
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.article-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.04);
+}
+
+.article-image {
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 500ms ease;
+}
+
+
+/* =========================================================
+   RUNTIME MONITOR
+========================================================= */
+
+.runtime-card {
+  padding: 1.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.runtime-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 15px 40px rgba(34, 197, 94, 0.06);
+}
+
+.runtime-label {
+  display: block;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+
+  color: #6b7280;
+
+  letter-spacing: 0.08em;
+}
+
+.runtime-value {
+  display: block;
+
+  margin-top: 0.75rem;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.8rem;
+
+  color: #22c55e;
+}
+
+.runtime-description {
+  display: block;
+
+  margin-top: 0.5rem;
+
+  font-size: 0.75rem;
+
+  color: #4b5563;
+}
+
+.learning-track {
+  --carousel-offset: 0%;
+
+  display: flex;
+  width: 100%;
+
+  transform:
+    translate3d(
+      var(--carousel-offset),
+      0,
+      0
+    );
+
+  transition:
+    transform 450ms
+    cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform;
+}
