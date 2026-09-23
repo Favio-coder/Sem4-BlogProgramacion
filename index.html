@@ -2,14 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevBlog | Programación y Tecnología</title>
-
     <meta
       name="description"
       content="DevBlog - Blog de programación, desarrollo web, cloud e inteligencia artificial."
@@ -17,7 +11,6 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
       tailwind.config = {
         theme: {
@@ -26,7 +19,6 @@
               mono: ["JetBrains Mono", "monospace"],
               sans: ["Inter", "sans-serif"],
             },
-
             colors: {
               dev: {
                 950: "#050505",
@@ -37,7 +29,6 @@
                 green: "#22c55e",
               },
             },
-
             boxShadow: {
               glow: "0 0 40px rgba(34,197,94,0.12)",
             },
@@ -56,1365 +47,529 @@
   </head>
 
   <body class="bg-dev-950 text-white font-sans">
-
     <!-- =====================================================
          NAVBAR
     ====================================================== -->
-
-    <header
-      class="sticky top-0 z-50 border-b border-white/10 bg-dev-950/90 backdrop-blur-xl"
-    >
-      <nav
-        class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between"
-      >
-
-        <a
-          href="#inicio"
-          class="group flex items-center gap-3"
-        >
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-dev-950/90 backdrop-blur-xl transition-shadow duration-300">
+      <nav class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+        <a href="#inicio" class="group flex items-center gap-3">
           <div
-            class="w-10 h-10 rounded-xl
-                   border border-green-500/30
-                   bg-green-500/10
-                   flex items-center justify-center
-                   font-mono text-green-400
-                   transition-all duration-300
-                   group-hover:border-green-400
-                   group-hover:shadow-[0_0_25px_rgba(34,197,94,0.25)]
-                   group-hover:rotate-3"
+            class="w-10 h-10 rounded-xl border border-green-500/30 bg-green-500/10
+                   flex items-center justify-center font-mono text-green-400
+                   transition-all duration-300 group-hover:border-green-400
+                   group-hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] group-hover:rotate-3"
           >
             &lt;/&gt;
           </div>
-
           <div>
             <span class="font-mono font-bold text-lg">
               Dev<span class="text-green-400">Blog</span>
             </span>
-
-            <p
-              class="text-[10px] text-gray-500 font-mono tracking-widest"
-            >
+            <p class="text-[10px] text-gray-500 font-mono tracking-widest">
               CODE • BUILD • LEARN
             </p>
           </div>
         </a>
 
         <div class="hidden md:flex items-center gap-8 text-sm">
-          <a
-            href="#inicio"
-            class="text-gray-300 hover:text-green-400 transition-colors"
-          >
-            Inicio
-          </a>
-
-          <a
-            href="#aprendizaje"
-            class="text-gray-300 hover:text-green-400 transition-colors"
-          >
-            Aprendizaje
-          </a>
-
-          <a
-            href="#articulos"
-            class="text-gray-300 hover:text-green-400 transition-colors"
-          >
-            Artículos
-          </a>
-
-          <a
-            href="#interactive"
-            class="text-gray-300 hover:text-green-400 transition-colors"
-          >
-            Playground
-          </a>
-
-          <a
-            href="#nosotros"
-            class="text-gray-300 hover:text-green-400 transition-colors"
-          >
-            Nosotros
-          </a>
+          <a href="#inicio" class="grow-text text-gray-300 hover:text-green-400 transition-colors">Inicio</a>
+          <a href="#aprendizaje" class="grow-text text-gray-300 hover:text-green-400 transition-colors">Aprendizaje</a>
+          <a href="#articulos" class="grow-text text-gray-300 hover:text-green-400 transition-colors">Artículos</a>
+          <a href="#interactive" class="grow-text text-gray-300 hover:text-green-400 transition-colors">Playground</a>
+          <a href="#nosotros" class="grow-text text-gray-300 hover:text-green-400 transition-colors">Nosotros</a>
         </div>
       </nav>
     </header>
 
-
     <main>
-
       <!-- =====================================================
            HERO
       ====================================================== -->
-
-      <section
-        id="inicio"
-        class="relative overflow-hidden border-b border-white/10"
-      >
-
-        <!-- Background -->
+      <section id="inicio" class="relative overflow-hidden border-b border-white/10">
         <div class="absolute inset-0 pointer-events-none">
-
-          <div
-            class="absolute top-20 left-10
-                   w-72 h-72
-                   bg-green-500/10
-                   rounded-full
-                   blur-3xl
-                   animate-pulse"
-          ></div>
-
-          <div
-            class="absolute bottom-0 right-10
-                   w-96 h-96
-                   bg-blue-500/10
-                   rounded-full
-                   blur-3xl"
-          ></div>
-
+          <div class="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-0 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         </div>
 
-
-        <div
-          class="relative max-w-7xl mx-auto
-                 px-6 lg:px-8
-                 py-24 lg:py-32"
-        >
-
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div class="max-w-4xl">
-
-            <!-- Status -->
-
             <div
-              class="inline-flex items-center gap-3
-                     px-4 py-2
-                     rounded-full
-                     border border-green-500/20
-                     bg-green-500/5
-                     font-mono text-xs text-gray-400
-                     mb-8"
+              data-animate="fade-left"
+              class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-green-500/20
+                     bg-green-500/5 font-mono text-xs text-gray-400 mb-8"
             >
-
-              <span
-                class="w-2 h-2 rounded-full
-                       bg-green-400 animate-pulse"
-              ></span>
-
+              <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
               SYSTEM ONLINE
-
-              <span class="text-green-400">
-                /
-              </span>
-
+              <span class="text-green-400">/</span>
               DEV_MODE
             </div>
 
-
             <h1
-              class="text-5xl md:text-6xl lg:text-7xl
-                     font-extrabold
-                     tracking-tight
-                     leading-tight"
+              data-letters
+              data-animate="fade-left"
+              class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight"
             >
-
-              Aprende a
-
-              <span class="text-green-400">
-                programar.
-              </span>
-
-              <br />
-
-              Construye el futuro.
-
+              Aprende a programar. Construye el futuro.
             </h1>
 
-
-            <p
-              class="mt-8
-                     text-lg md:text-xl
-                     text-gray-400
-                     max-w-2xl
-                     leading-relaxed"
-            >
-              Un espacio para aprender programación,
-              desarrollo web, cloud computing,
-              inteligencia artificial y las tecnologías
-              que están transformando el mundo.
+            <p data-animate="fade-left" class="mt-8 text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+              Un espacio para aprender programación, desarrollo web, cloud
+              computing, inteligencia artificial y las tecnologías que están
+              transformando el mundo.
             </p>
 
-
-            <!-- Buttons -->
-
-            <div class="mt-10 flex flex-wrap gap-4">
-
+            <div data-animate="fade-left" class="mt-10 flex flex-wrap gap-4">
               <a
                 href="#articulos"
-                class="group
-                       px-6 py-3
-                       rounded-lg
-                       bg-green-500
-                       text-black
-                       font-semibold
-                       transition-all duration-300
-                       hover:bg-green-400
-                       hover:-translate-y-1
+                class="group px-6 py-3 rounded-lg bg-green-500 text-black font-semibold
+                       transition-all duration-300 hover:bg-green-400 hover:-translate-y-1
                        hover:shadow-[0_10px_35px_rgba(34,197,94,0.25)]"
               >
                 Explorar artículos
-
-                <span
-                  class="inline-block
-                         ml-2
-                         transition-transform
-                         group-hover:translate-x-1"
-                >
-                  →
-                </span>
+                <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
               </a>
-
 
               <a
                 href="#interactive"
-                class="px-6 py-3
-                       rounded-lg
-                       border border-white/10
-                       hover:border-green-500/40
-                       hover:bg-white/5
-                       hover:-translate-y-1
-                       transition-all duration-300"
+                class="px-6 py-3 rounded-lg border border-white/10 hover:border-green-500/40
+                       hover:bg-white/5 hover:-translate-y-1 transition-all duration-300"
               >
                 Ver Playground
               </a>
-
             </div>
 
-
-            <!-- =================================================
-                 COUNTERS
-            ================================================== -->
-
-            <div
-              class="grid grid-cols-2 md:grid-cols-4
-                     gap-4
-                     mt-16
-                     max-w-3xl"
-            >
-
-              <div
-                class="counter-card"
-                data-counter="12"
-              >
-                <p
-                  class="font-mono text-3xl
-                         font-bold text-green-400"
-                >
-                  <span
-                    class="counter-value"
-                    data-target="12"
-                  >
-                    0
-                  </span>
-                  +
+            <!-- COUNTERS -->
+            <div data-animate="zoom" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl">
+              <div class="counter-card">
+                <p class="font-mono text-3xl font-bold text-green-400">
+                  <span class="counter-value" data-target="12">0</span>+
                 </p>
-
-                <p class="text-xs text-gray-500 mt-2">
-                  ARTÍCULOS
-                </p>
+                <p class="text-xs text-gray-500 mt-2">ARTÍCULOS</p>
               </div>
 
-
-              <div
-                class="counter-card"
-                data-counter="4"
-              >
-                <p
-                  class="font-mono text-3xl
-                         font-bold text-green-400"
-                >
-                  <span
-                    class="counter-value"
-                    data-target="4"
-                  >
-                    0
-                  </span>
+              <div class="counter-card">
+                <p class="font-mono text-3xl font-bold text-green-400">
+                  <span class="counter-value" data-target="4">0</span>
                 </p>
-
-                <p class="text-xs text-gray-500 mt-2">
-                  CATEGORÍAS
-                </p>
+                <p class="text-xs text-gray-500 mt-2">CATEGORÍAS</p>
               </div>
 
-
-              <div
-                class="counter-card"
-                data-counter="8"
-              >
-                <p
-                  class="font-mono text-3xl
-                         font-bold text-green-400"
-                >
-                  <span
-                    class="counter-value"
-                    data-target="8"
-                  >
-                    0
-                  </span>
-                  +
+              <div class="counter-card">
+                <p class="font-mono text-3xl font-bold text-green-400">
+                  <span class="counter-value" data-target="8">0</span>+
                 </p>
-
-                <p class="text-xs text-gray-500 mt-2">
-                  TECNOLOGÍAS
-                </p>
+                <p class="text-xs text-gray-500 mt-2">TECNOLOGÍAS</p>
               </div>
 
-
-              <div
-                class="counter-card"
-                data-counter="99"
-              >
-                <p
-                  class="font-mono text-3xl
-                         font-bold text-green-400"
-                >
-                  <span
-                    class="counter-value"
-                    data-target="99"
-                  >
-                    0
-                  </span>
-                  %
+              <div class="counter-card">
+                <p class="font-mono text-3xl font-bold text-green-400">
+                  <span class="counter-value" data-target="99">0</span>%
                 </p>
-
-                <p class="text-xs text-gray-500 mt-2">
-                  CURIOSIDAD
-                </p>
+                <p class="text-xs text-gray-500 mt-2">CURIOSIDAD</p>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
-
 
       <!-- =====================================================
            CATEGORÍAS
       ====================================================== -->
-
-      <section
-        id="categorias"
-        class="max-w-7xl mx-auto
-               px-6 lg:px-8
-               py-20"
-      >
-
-        <div
-          class="flex flex-col md:flex-row
-                 md:items-end
-                 justify-between
-                 gap-6"
-        >
-
-          <div>
-
-            <p
-              class="font-mono
-                     text-green-400
-                     text-sm
-                     mb-3"
-            >
-              // EXPLORE
-            </p>
-
-            <h2
-              class="text-3xl md:text-4xl
-                     font-bold"
-            >
-              Categorías
-            </h2>
-
-            <p class="mt-3 text-gray-500">
-              Encuentra contenido según lo que quieres aprender.
-            </p>
-
+      <section id="categorias" class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div data-animate="fade-right">
+            <p class="font-mono text-green-400 text-sm mb-3">// EXPLORE</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Categorías</h2>
+            <p class="mt-3 text-gray-500">Encuentra contenido según lo que quieres aprender.</p>
           </div>
-
         </div>
 
-
-        <div
-          class="grid
-                 grid-cols-2
-                 md:grid-cols-4
-                 gap-4
-                 mt-10"
-        >
-
-          <button
-            type="button"
-            class="category-card active"
-            data-category="todos"
-          >
-            <span class="text-2xl">
-              &lt;/&gt;
-            </span>
-
-            <span>
-              Todos
-            </span>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+          <button type="button" class="category-card active" data-category="todos">
+            <span class="text-2xl">&lt;/&gt;</span>
+            <span>Todos</span>
           </button>
 
-
-          <button
-            type="button"
-            class="category-card"
-            data-category="javascript"
-          >
-            <span class="text-2xl">
-              JS
-            </span>
-
-            <span>
-              JavaScript
-            </span>
+          <button type="button" class="category-card" data-category="javascript">
+            <span class="text-2xl">JS</span>
+            <span>JavaScript</span>
           </button>
 
-
-          <button
-            type="button"
-            class="category-card"
-            data-category="cloud"
-          >
-            <span class="text-2xl">
-              ☁
-            </span>
-
-            <span>
-              Cloud
-            </span>
+          <button type="button" class="category-card" data-category="cloud">
+            <span class="text-2xl">☁</span>
+            <span>Cloud</span>
           </button>
 
-
-          <button
-            type="button"
-            class="category-card"
-            data-category="ia"
-          >
-            <span class="text-2xl">
-              AI
-            </span>
-
-            <span>
-              Inteligencia Artificial
-            </span>
+          <button type="button" class="category-card" data-category="ia">
+            <span class="text-2xl">AI</span>
+            <span>Inteligencia Artificial</span>
           </button>
-
         </div>
       </section>
-
 
       <!-- =====================================================
            LEARNING PATH
       ====================================================== -->
-
-      <section
-        id="aprendizaje"
-        class="relative
-               overflow-hidden
-               border-y border-white/10"
-      >
-
+      <section id="aprendizaje" class="relative overflow-hidden border-y border-white/10">
         <div
-          class="absolute
-                 -top-40
-                 left-1/2
-                 -translate-x-1/2
-                 w-[500px]
-                 h-[500px]
-                 bg-green-500/5
-                 rounded-full
-                 blur-3xl
-                 pointer-events-none"
+          class="absolute -top-40 left-1/2 -translate-x-1/2 w-[500px] h-[500px]
+                 bg-green-500/5 rounded-full blur-3xl pointer-events-none"
         ></div>
 
-
-        <div
-          class="relative
-                 max-w-7xl mx-auto
-                 px-6 lg:px-8
-                 py-24"
-        >
-
-          <div
-            class="text-center
-                   max-w-2xl
-                   mx-auto"
-          >
-
-            <p
-              class="font-mono
-                     text-green-400
-                     text-sm mb-3"
-            >
-              // LEARNING_PATH
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+          <div data-animate="zoom" class="text-center max-w-2xl mx-auto">
+            <p class="font-mono text-green-400 text-sm mb-3">// LEARNING_PATH</p>
+            <h2 class="text-3xl md:text-5xl font-bold">¿Qué vas a aprender?</h2>
+            <p class="mt-5 text-gray-500 leading-relaxed">
+              Explora JavaScript moderno, manipulación del DOM, Canvas,
+              animaciones, Event Loop y optimización.
             </p>
-
-            <h2
-              class="text-3xl
-                     md:text-5xl
-                     font-bold"
-            >
-              ¿Qué vas a aprender?
-            </h2>
-
-            <p
-              class="mt-5
-                     text-gray-500
-                     leading-relaxed"
-            >
-              Explora JavaScript moderno,
-              manipulación del DOM,
-              Canvas, animaciones,
-              Event Loop y optimización.
-            </p>
-
           </div>
 
-
           <!-- CAROUSEL -->
-
-          <div
-            id="learningCarousel"
-            class="relative
-                   mt-14
-                   max-w-5xl
-                   mx-auto"
-          >
-
-            <div
-              id="learningViewport"
-              class="overflow-hidden
-                     rounded-2xl"
-            >
-
-              <div
-                id="learningTrack"
-                class="learning-track"
-              >
-
-                <!-- SLIDE 1 -->
-
-                <article
-                  class="learning-slide"
-                  data-slide="0"
-                >
-
-                  <div class="learning-icon">
-                    JS
-                  </div>
-
+          <div id="learningCarousel" class="relative mt-14 max-w-5xl mx-auto">
+            <div id="learningViewport" class="overflow-hidden rounded-2xl">
+              <div id="learningTrack" class="learning-track">
+                <article class="learning-slide" data-slide="0">
+                  <div class="learning-icon">JS</div>
                   <div class="flex-1">
-
-                    <p class="learning-number">
-                      01 / JAVASCRIPT
-                    </p>
-
-                    <h3 class="learning-title">
-                      JavaScript moderno
-                    </h3>
-
+                    <p class="learning-number">01 / JAVASCRIPT</p>
+                    <h3 class="learning-title">JavaScript moderno</h3>
                     <p class="learning-description">
-                      Trabajarás con ES6+,
-                      funciones flecha,
-                      destructuring,
+                      Trabajarás con ES6+, funciones flecha, destructuring,
                       eventos, IIFE y closures.
                     </p>
-
                     <div class="learning-tags">
                       <span>ES6+</span>
                       <span>Arrow Functions</span>
                       <span>IIFE</span>
                       <span>Closures</span>
                     </div>
-
                   </div>
                 </article>
 
-
-                <!-- SLIDE 2 -->
-
-                <article
-                  class="learning-slide"
-                  data-slide="1"
-                >
-
-                  <div class="learning-icon">
-                    DOM
-                  </div>
-
+                <article class="learning-slide" data-slide="1">
+                  <div class="learning-icon">DOM</div>
                   <div class="flex-1">
-
-                    <p class="learning-number">
-                      02 / DOM
-                    </p>
-
-                    <h3 class="learning-title">
-                      Manipulación del DOM
-                    </h3>
-
+                    <p class="learning-number">02 / DOM</p>
+                    <h3 class="learning-title">Manipulación del DOM</h3>
                     <p class="learning-description">
-                      Crearás y modificarás elementos
-                      dinámicamente utilizando la API
-                      del DOM y eventos.
+                      Crearás y modificarás elementos dinámicamente
+                      utilizando la API del DOM y eventos.
                     </p>
-
                     <div class="learning-tags">
                       <span>querySelector</span>
                       <span>addEventListener</span>
                       <span>classList</span>
                       <span>Event Bubbling</span>
                     </div>
-
                   </div>
                 </article>
 
-
-                <!-- SLIDE 3 -->
-
-                <article
-                  class="learning-slide"
-                  data-slide="2"
-                >
-
-                  <div class="learning-icon">
-                    2D
-                  </div>
-
+                <article class="learning-slide" data-slide="2">
+                  <div class="learning-icon">2D</div>
                   <div class="flex-1">
-
-                    <p class="learning-number">
-                      03 / CANVAS
-                    </p>
-
-                    <h3 class="learning-title">
-                      Animaciones con Canvas
-                    </h3>
-
+                    <p class="learning-number">03 / CANVAS</p>
+                    <h3 class="learning-title">Animaciones con Canvas</h3>
                     <p class="learning-description">
-                      Construirás partículas utilizando
-                      Canvas API, contexto 2D,
-                      requestAnimationFrame
-                      y delta time.
+                      Construirás partículas utilizando Canvas API, contexto
+                      2D, requestAnimationFrame y delta time.
                     </p>
-
                     <div class="learning-tags">
                       <span>Canvas 2D</span>
                       <span>arc()</span>
                       <span>fillRect()</span>
                       <span>stroke()</span>
                     </div>
-
                   </div>
                 </article>
 
-
-                <!-- SLIDE 4 -->
-
-                <article
-                  class="learning-slide"
-                  data-slide="3"
-                >
-
-                  <div class="learning-icon">
-                    FPS
-                  </div>
-
+                <article class="learning-slide" data-slide="3">
+                  <div class="learning-icon">FPS</div>
                   <div class="flex-1">
-
-                    <p class="learning-number">
-                      04 / RENDER LOOP
-                    </p>
-
-                    <h3 class="learning-title">
-                      Event Loop y Renderizado
-                    </h3>
-
+                    <p class="learning-number">04 / RENDER LOOP</p>
+                    <h3 class="learning-title">Event Loop y Renderizado</h3>
                     <p class="learning-description">
-                      Comprenderás cómo JavaScript
-                      ejecuta tareas y cómo el navegador
-                      sincroniza el renderizado.
+                      Comprenderás cómo JavaScript ejecuta tareas y cómo el
+                      navegador sincroniza el renderizado.
                     </p>
-
                     <div class="learning-tags">
                       <span>Event Loop</span>
                       <span>dt</span>
                       <span>FPS</span>
                       <span>Render Pipeline</span>
                     </div>
-
                   </div>
                 </article>
 
-
-                <!-- SLIDE 5 -->
-
-                <article
-                  class="learning-slide"
-                  data-slide="4"
-                >
-
-                  <div class="learning-icon">
-                    DEV
-                  </div>
-
+                <article class="learning-slide" data-slide="4">
+                  <div class="learning-icon">DEV</div>
                   <div class="flex-1">
-
-                    <p class="learning-number">
-                      05 / OPTIMIZATION
-                    </p>
-
-                    <h3 class="learning-title">
-                      Performance y memoria
-                    </h3>
-
+                    <p class="learning-number">05 / OPTIMIZATION</p>
+                    <h3 class="learning-title">Performance y memoria</h3>
                     <p class="learning-description">
-                      Analizarás FPS, memoria,
-                      garbage collection,
-                      detached nodes y long tasks.
+                      Analizarás FPS, memoria, garbage collection, detached
+                      nodes y long tasks.
                     </p>
-
                     <div class="learning-tags">
                       <span>Performance</span>
                       <span>Memory</span>
                       <span>GC</span>
                       <span>DevTools</span>
                     </div>
-
                   </div>
                 </article>
-
               </div>
             </div>
-
 
             <!-- CONTROLES -->
+            <div class="flex items-center justify-between mt-8">
+              <button id="prevLearning" type="button" class="carousel-button" aria-label="Anterior">←</button>
 
-            <div
-              class="flex
-                     items-center
-                     justify-between
-                     mt-8"
-            >
-
-              <button
-                id="prevLearning"
-                type="button"
-                class="carousel-button"
-                aria-label="Anterior"
-              >
-                ←
-              </button>
-
-
-              <div
-                id="learningIndicators"
-                class="flex items-center gap-2"
-              >
-
-                <button
-                  type="button"
-                  class="carousel-dot active"
-                  data-slide-to="0"
-                  aria-label="Ir a JavaScript"
-                ></button>
-
-                <button
-                  type="button"
-                  class="carousel-dot"
-                  data-slide-to="1"
-                  aria-label="Ir a DOM"
-                ></button>
-
-                <button
-                  type="button"
-                  class="carousel-dot"
-                  data-slide-to="2"
-                  aria-label="Ir a Canvas"
-                ></button>
-
-                <button
-                  type="button"
-                  class="carousel-dot"
-                  data-slide-to="3"
-                  aria-label="Ir a Event Loop"
-                ></button>
-
-                <button
-                  type="button"
-                  class="carousel-dot"
-                  data-slide-to="4"
-                  aria-label="Ir a Performance"
-                ></button>
-
+              <div id="learningIndicators" class="flex items-center gap-2">
+                <button type="button" class="carousel-dot active" data-slide-to="0" aria-label="Ir a JavaScript"></button>
+                <button type="button" class="carousel-dot" data-slide-to="1" aria-label="Ir a DOM"></button>
+                <button type="button" class="carousel-dot" data-slide-to="2" aria-label="Ir a Canvas"></button>
+                <button type="button" class="carousel-dot" data-slide-to="3" aria-label="Ir a Event Loop"></button>
+                <button type="button" class="carousel-dot" data-slide-to="4" aria-label="Ir a Performance"></button>
               </div>
 
-
-              <button
-                id="nextLearning"
-                type="button"
-                class="carousel-button"
-                aria-label="Siguiente"
-              >
-                →
-              </button>
-
+              <button id="nextLearning" type="button" class="carousel-button" aria-label="Siguiente">→</button>
             </div>
-
 
             <!-- STATUS -->
-
             <div class="mt-8 flex justify-center">
-
               <div
-                class="inline-flex
-                       items-center
-                       gap-3
-                       px-4 py-2
-                       rounded-full
-                       border border-white/10
-                       bg-white/[0.02]
-                       font-mono
-                       text-xs
-                       text-gray-500"
+                class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10
+                       bg-white/[0.02] font-mono text-xs text-gray-500"
               >
-
-                <span
-                  class="w-2 h-2
-                         rounded-full
-                         bg-green-400
-                         animate-pulse"
-                ></span>
-
-                <span id="carouselStatus">
-                  MODULE_01 // JAVASCRIPT
-                </span>
-
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span id="carouselStatus">MODULE_01 // JAVASCRIPT</span>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
 
+      <!-- =====================================================
+           TECH STACK PLAYGROUND (iconos con hover magnético)
+      ====================================================== -->
+      <section id="stack" class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div data-animate="fade-right" class="max-w-2xl">
+          <p class="font-mono text-green-400 text-sm mb-3">// TECH_STACK</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Con qué trabajamos</h2>
+          <p class="mt-3 text-gray-500">
+            Pasa el cursor sobre cada ícono — reacciona con movimiento y chispas.
+          </p>
+        </div>
+
+        <div id="techGrid" class="tech-grid mt-10"></div>
+      </section>
 
       <!-- =====================================================
            ARTICLES
       ====================================================== -->
-
-      <section
-        id="articulos"
-        class="border-y
-               border-white/10
-               bg-white/[0.015]"
-      >
-
-        <div
-          class="max-w-7xl mx-auto
-                 px-6 lg:px-8
-                 py-20"
-        >
-
-          <div
-            class="flex
-                   flex-col
-                   md:flex-row
-                   md:items-end
-                   justify-between
-                   gap-6"
-          >
-
-            <div>
-
-              <p
-                class="font-mono
-                       text-green-400
-                       text-sm mb-3"
-              >
-                // LATEST_POSTS
-              </p>
-
-              <h2
-                class="text-3xl
-                       md:text-4xl
-                       font-bold"
-              >
-                Últimos artículos
-              </h2>
-
-              <p class="mt-3 text-gray-500">
-                Ideas, tutoriales y experiencias
-                del mundo del desarrollo.
-              </p>
-
+      <section id="articulos" class="border-y border-white/10 bg-white/[0.015]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div data-animate="fade-right">
+              <p class="font-mono text-green-400 text-sm mb-3">// LATEST_POSTS</p>
+              <h2 class="text-3xl md:text-4xl font-bold">Últimos artículos</h2>
+              <p class="mt-3 text-gray-500">Ideas, tutoriales y experiencias del mundo del desarrollo.</p>
             </div>
 
-
-            <div class="relative">
-
+            <div class="relative" data-animate="fade-left">
               <input
                 id="searchInput"
                 type="search"
                 placeholder="Buscar artículos..."
-                class="w-full
-                       md:w-72
-                       px-4 py-3
-                       bg-dev-800
-                       border border-white/10
-                       rounded-lg
-                       outline-none
-                       focus:border-green-500/50
-                       transition-colors
-                       font-mono
-                       text-sm"
+                class="w-full md:w-72 px-4 py-3 bg-dev-800 border border-white/10 rounded-lg
+                       outline-none focus:border-green-500/50 transition-colors font-mono text-sm"
               />
-
             </div>
-
           </div>
 
-
-          <!-- JS INSERTA AQUÍ LOS ARTÍCULOS -->
-
-          <div
-            id="articlesContainer"
-            class="grid
-                   md:grid-cols-2
-                   lg:grid-cols-3
-                   gap-6
-                   mt-10"
-          ></div>
-
+          <!-- TS INSERTA AQUÍ LOS ARTÍCULOS -->
+          <div id="articlesContainer" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"></div>
         </div>
       </section>
-
 
       <!-- =====================================================
            CANVAS PLAYGROUND
       ====================================================== -->
-
-      <section
-        id="interactive"
-        class="relative
-               overflow-hidden
-               border-y
-               border-white/10"
-      >
-
-        <div
-          class="max-w-7xl mx-auto
-                 px-6 lg:px-8
-                 py-24"
-        >
-
-          <div class="text-center">
-
-            <p
-              class="font-mono
-                     text-green-400
-                     text-sm mb-3"
-            >
-              // INTERACTIVE_CANVAS
+      <section id="interactive" class="relative overflow-hidden border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24">
+          <div data-animate="zoom" class="text-center">
+            <p class="font-mono text-green-400 text-sm mb-3">// INTERACTIVE_CANVAS</p>
+            <h2 class="text-3xl md:text-4xl font-bold">JavaScript en movimiento</h2>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+              Dos playgrounds construidos con Canvas API y requestAnimationFrame.
+              Mueve el cursor y haz clic para interactuar con ambos.
             </p>
-
-            <h2
-              class="text-3xl
-                     md:text-4xl
-                     font-bold"
-            >
-              JavaScript en movimiento
-            </h2>
-
-            <p
-              class="mt-4
-                     text-gray-500
-                     max-w-2xl
-                     mx-auto"
-            >
-              Una animación de partículas construida
-              con Canvas API, requestAnimationFrame
-              y delta time.
-            </p>
-
           </div>
 
-
-          <div
-            class="mt-12
-                   relative
-                   h-96
-                   rounded-2xl
-                   border border-white/10
-                   bg-black
-                   overflow-hidden
-                   group"
-          >
-
-            <canvas
-              id="codeCanvas"
-              class="absolute
-                     inset-0
-                     w-full
-                     h-full"
-            ></canvas>
-
-
-            <div
-              class="absolute
-                     inset-0
-                     flex
-                     items-center
-                     justify-center
-                     pointer-events-none"
-            >
-
-              <div class="text-center">
-
-                <p
-                  class="font-mono
-                         text-green-400
-                         text-sm
-                         transition-transform
-                         duration-500
-                         group-hover:scale-110"
-                >
-                  requestAnimationFrame()
-                </p>
-
-                <p
-                  class="mt-2
-                         text-gray-600
-                         font-mono
-                         text-xs"
-                >
-                  // PARTICLE_ENGINE_RUNNING
-                </p>
-
-              </div>
-
+          <div data-animate="zoom" class="playground-grid mt-12">
+            <!-- Playground 1: red de partículas -->
+            <div class="playground-box h-80 group">
+              <span class="playground-label">// PARTICLE_NETWORK</span>
+              <canvas id="codeCanvas" class="absolute inset-0 w-full h-full"></canvas>
+              <span class="playground-hint">mueve el cursor →</span>
             </div>
 
+            <!-- Playground 2: estela + ondas -->
+            <div class="playground-box h-80">
+              <span class="playground-label">// TRAIL_&amp;_RIPPLES</span>
+              <canvas id="trailCanvas" class="absolute inset-0 w-full h-full"></canvas>
+              <span class="playground-hint">mueve y haz clic →</span>
+            </div>
           </div>
 
+          <!-- Playground 3: terminal animada -->
+          <div data-animate="zoom" class="terminal mt-6">
+            <div class="terminal-bar">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">devblog — zsh — ts</span>
+            </div>
+            <div id="terminalBody" class="terminal-body"></div>
+          </div>
         </div>
       </section>
 
+      <!-- =====================================================
+           LIVE STATS
+      ====================================================== -->
+      <section id="livestats" class="border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <div data-animate="zoom" class="text-center mb-12">
+            <p class="font-mono text-green-400 text-sm mb-3">// LIVE_ACTIVITY</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Actividad en vivo</h2>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+              Contadores que siguen subiendo mientras estás en la página.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="live-stat-card">
+              <span class="live-dot"></span>
+              <strong id="statLines" class="live-stat-value">0</strong>
+              <p class="live-stat-label">LÍNEAS DE CÓDIGO</p>
+            </div>
+            <div class="live-stat-card">
+              <span class="live-dot"></span>
+              <strong id="statCoffees" class="live-stat-value">0</strong>
+              <p class="live-stat-label">CAFÉS TOMADOS</p>
+            </div>
+            <div class="live-stat-card">
+              <span class="live-dot"></span>
+              <strong id="statCommits" class="live-stat-value">0</strong>
+              <p class="live-stat-label">COMMITS</p>
+            </div>
+            <div class="live-stat-card">
+              <span class="live-dot"></span>
+              <strong id="statBugs" class="live-stat-value">0</strong>
+              <p class="live-stat-label">BUGS RESUELTOS</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- =====================================================
            PERFORMANCE MONITOR
       ====================================================== -->
-
-      <section
-        id="performance"
-        class="border-b
-               border-white/10
-               bg-white/[0.015]"
-      >
-
-        <div
-          class="max-w-7xl mx-auto
-                 px-6 lg:px-8
-                 py-20"
-        >
-
-          <div class="text-center mb-12">
-
-            <p
-              class="font-mono
-                     text-green-400
-                     text-sm mb-3"
-            >
-              // RUNTIME_MONITOR
+      <section id="performance" class="border-b border-white/10 bg-white/[0.015]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+          <div data-animate="zoom" class="text-center mb-12">
+            <p class="font-mono text-green-400 text-sm mb-3">// RUNTIME_MONITOR</p>
+            <h2 class="text-3xl md:text-4xl font-bold">Depurador en tiempo real</h2>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+              Observa el rendimiento de la animación directamente desde el
+              navegador.
             </p>
-
-            <h2
-              class="text-3xl
-                     md:text-4xl
-                     font-bold"
-            >
-              Depurador en tiempo real
-            </h2>
-
-            <p
-              class="mt-4
-                     text-gray-500
-                     max-w-2xl
-                     mx-auto"
-            >
-              Observa el rendimiento de la animación
-              directamente desde el navegador.
-            </p>
-
           </div>
 
-
-          <div
-            class="grid
-                   grid-cols-2
-                   lg:grid-cols-4
-                   gap-4"
-          >
-
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="runtime-card">
-
-              <span class="runtime-label">
-                FPS
-              </span>
-
-              <strong
-                id="fpsValue"
-                class="runtime-value"
-              >
-                0
-              </strong>
-
-              <span class="runtime-description">
-                Frames / segundo
-              </span>
-
+              <span class="runtime-label">FPS</span>
+              <strong id="fpsValue" class="runtime-value">0</strong>
+              <span class="runtime-description">Frames / segundo</span>
             </div>
 
-
             <div class="runtime-card">
-
-              <span class="runtime-label">
-                FRAME TIME
-              </span>
-
-              <strong
-                id="frameValue"
-                class="runtime-value"
-              >
-                0.00 ms
-              </strong>
-
-              <span class="runtime-description">
-                Duración del frame
-              </span>
-
+              <span class="runtime-label">FRAME TIME</span>
+              <strong id="frameValue" class="runtime-value">0.00 ms</strong>
+              <span class="runtime-description">Duración del frame</span>
             </div>
 
-
             <div class="runtime-card">
-
-              <span class="runtime-label">
-                LONG TASKS
-              </span>
-
-              <strong
-                id="longTaskValue"
-                class="runtime-value"
-              >
-                0
-              </strong>
-
-              <span class="runtime-description">
-                Tareas largas
-              </span>
-
+              <span class="runtime-label">LONG TASKS</span>
+              <strong id="longTaskValue" class="runtime-value">0</strong>
+              <span class="runtime-description">Tareas largas</span>
             </div>
 
-
             <div class="runtime-card">
-
-              <span class="runtime-label">
-                JS HEAP
-              </span>
-
-              <strong
-                id="heapValue"
-                class="runtime-value"
-              >
-                —
-              </strong>
-
-              <span class="runtime-description">
-                Memoria JavaScript
-              </span>
-
+              <span class="runtime-label">JS HEAP</span>
+              <strong id="heapValue" class="runtime-value">—</strong>
+              <span class="runtime-description">Memoria JavaScript</span>
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       <!-- =====================================================
            NEWSLETTER
       ====================================================== -->
+      <section id="nosotros" class="border-t border-white/10">
+        <div data-animate="zoom" class="max-w-4xl mx-auto px-6 py-24 text-center">
+          <p class="font-mono text-green-400 text-sm mb-3">// STAY_UPDATED</p>
+          <h2 class="text-3xl md:text-4xl font-bold">Sigue aprendiendo</h2>
+          <p class="mt-4 text-gray-500">Recibe nuevos artículos y recursos sobre programación.</p>
 
-      <section
-        id="nosotros"
-        class="border-t
-               border-white/10"
-      >
-
-        <div
-          class="max-w-4xl mx-auto
-                 px-6
-                 py-24
-                 text-center"
-        >
-
-          <p
-            class="font-mono
-                   text-green-400
-                   text-sm mb-3"
-          >
-            // STAY_UPDATED
-          </p>
-
-          <h2
-            class="text-3xl
-                   md:text-4xl
-                   font-bold"
-          >
-            Sigue aprendiendo
-          </h2>
-
-          <p class="mt-4 text-gray-500">
-            Recibe nuevos artículos y recursos
-            sobre programación.
-          </p>
-
-
-          <form
-            id="newsletterForm"
-            class="mt-8
-                   flex
-                   flex-col
-                   sm:flex-row
-                   gap-3
-                   max-w-xl
-                   mx-auto"
-          >
-
+          <form id="newsletterForm" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
             <input
               id="emailInput"
               type="email"
               placeholder="tu@email.com"
               required
-              class="flex-1
-                     px-4 py-3
-                     bg-dev-800
-                     border border-white/10
-                     rounded-lg
-                     outline-none
-                     focus:border-green-500/50
-                     font-mono
-                     text-sm"
+              class="flex-1 px-4 py-3 bg-dev-800 border border-white/10 rounded-lg
+                     outline-none focus:border-green-500/50 font-mono text-sm"
             />
-
 
             <button
               type="submit"
-              class="px-6 py-3
-                     bg-green-500
-                     text-black
-                     rounded-lg
-                     font-semibold
-                     transition-all
-                     duration-300
-                     hover:bg-green-400
-                     hover:-translate-y-1
+              class="px-6 py-3 bg-green-500 text-black rounded-lg font-semibold transition-all
+                     duration-300 hover:bg-green-400 hover:-translate-y-1
                      hover:shadow-[0_10px_30px_rgba(34,197,94,0.2)]"
             >
               Suscribirme
             </button>
-
           </form>
 
-
-          <p
-            id="formMessage"
-            class="mt-4
-                   text-sm
-                   font-mono
-                   hidden"
-          ></p>
-
+          <p id="formMessage" class="mt-4 text-sm font-mono hidden"></p>
         </div>
       </section>
-
     </main>
-
 
     <!-- =====================================================
          FOOTER
     ====================================================== -->
-
-    <footer
-      class="border-t
-             border-white/10"
-    >
-
-      <div
-        class="max-w-7xl mx-auto
-               px-6 lg:px-8
-               py-8"
-      >
-
-        <div
-          class="flex
-                 flex-col
-                 md:flex-row
-                 items-center
-                 justify-between
-                 gap-4"
-        >
-
-          <p
-            class="text-sm
-                   text-gray-600
-                   font-mono"
-          >
-            © 2026 DevBlog
-          </p>
-
-          <p
-            class="text-xs
-                   text-gray-700
-                   font-mono"
-          >
-            Built with HTML • Tailwind • TypeScript
-          </p>
-
+    <footer class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-gray-600 font-mono">© 2026 DevBlog</p>
+          <p class="text-xs text-gray-700 font-mono">Built with HTML • Tailwind • TypeScript</p>
         </div>
-
 
         <div class="mt-6 text-center">
-
-          <p
-            class="text-xs
-                   text-gray-700
-                   font-mono"
-          >
-            Richard Favio Asturimac Medina
-            · Facultad de Ingeniería de Sistemas
+          <p class="text-xs text-gray-700 font-mono">
+            Richard Favio Asturimac Medina · Facultad de Ingeniería de Sistemas
           </p>
-
         </div>
-
       </div>
-
     </footer>
 
-
-    <!-- JavaScript compilado desde TypeScript -->
-    <script
-      src="./js/app.ts"
-      defer
-    ></script>
-
+    <!-- JavaScript compilado desde TypeScript (fuente en ./ts/app.ts) -->
+    <script src="./js/app.js" defer></script>
   </body>
 </html>
